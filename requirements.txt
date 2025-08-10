@@ -1,0 +1,9 @@
+# Core dependencies for AI Debate System
+openai>=1.99.0
+gradio>=5.42.0
+python-dotenv>=1.1.0
+
+# Additional dependencies that may be needed
+requests>=2.32.0
+httpx>=0.28.0
+typing-extensions>=4.14.0
