@@ -1,0 +1,41 @@
+/* AI Debate System Styles */
+
+.gradio-container {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+}
+
+.main-header {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.header-description {
+    text-align: center;
+    color: #7f8c8d;
+}
+
+.settings-section {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.char-counter {
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+    margin-top: 5px;
+}
+
+.preset-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.preset-btn {
+    flex: 1;
+}

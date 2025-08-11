@@ -1,6 +1,6 @@
 # AI Debate System
 
-A sophisticated AI-powered debate system that orchestrates debates between multiple AI models, with intelligent judgment and cost tracking capabilities.
+AI-powered debate system with multiple models, cost tracking, and web interface.
 
 ## 🚀 Features
 
@@ -67,10 +67,10 @@ A sophisticated AI-powered debate system that orchestrates debates between multi
    Open your browser and navigate to `http://localhost:7860`
 
 3. **Configure debate settings**
-   - Enter your debate question
-   - Select AI models for debaters and judge
-   - Adjust token limits and debate rounds
-   - Set cost limits if desired
+    - Enter your debate question
+    - Select AI models for debaters and judge
+    - Adjust token limits and debate rounds
+    - Set cost limits if desired
 
 4. **Launch the debate**
    Click "Start Debate" to begin the AI-powered discussion
@@ -78,16 +78,20 @@ A sophisticated AI-powered debate system that orchestrates debates between multi
 ## 🔧 Configuration
 
 ### Available Models
+
 - **GPT-5 Models**: `gpt-5-mini`, `gpt-5-nano`
 - **GPT-4 Models**: `gpt-4o-mini`, `gpt-4o`, `gpt-4-turbo`, `gpt-4`
 - **GPT-3.5 Models**: `gpt-3.5-turbo`, `gpt-3.5-turbo-16k`
 
 ### Cost Structure
+
 The system tracks costs based on OpenAI's pricing:
+
 - Input tokens: $0.0015 - $0.30 per 1M tokens
 - Output tokens: $0.002 - $2.00 per 1M tokens
 
 ### Debate Settings
+
 - **Rounds**: 1-3 debate rounds
 - **Token Limits**: 100-4000 tokens per response
 - **Cost Limits**: Optional budget constraints
@@ -96,38 +100,54 @@ The system tracks costs based on OpenAI's pricing:
 
 ```
 ai-debate/
-├── main.py              # Main application file
+├── main.py              # Main application logic and orchestration
+├── ui.py                # Gradio UI components and interface
+├── config.py            # Configuration constants and settings
+├── styles.css           # Custom CSS styling
 ├── requirements.txt     # Python dependencies
 ├── README.md           # Project documentation
 ├── .env                # Environment variables (create this)
 └── venv/               # Virtual environment
 ```
 
-## 🔍 Core Functions
+## 🔍 Core Components
 
-- **`enhanced_debate_function`**: Main debate orchestration
-- **`validate_inputs`**: Input validation and sanitization
+### main.py
+- **`enhanced_debate_function`**: Main debate orchestration with logging
+- **`validate_inputs`**: Universal input validation 
 - **`estimate_cost_for_question`**: Cost estimation before debate
-- **`call_openai_model`**: OpenAI API integration
-- **`create_interface`**: Gradio web interface setup
+- **`CostTracker`**: Class-based cost management
+- **`LogManager`**: Centralized logging with performance tracking
+
+### ui.py
+- **`DebateUI`**: Main UI class with Gradio components
+- **`create_interface`**: Web interface setup and event handlers
+- **`setup_event_handlers`**: UI interaction management
+
+### config.py
+- **Model configurations**: Available AI models and pricing
+- **UI settings**: Interface configuration and defaults
+- **Validation limits**: Input constraints and presets
 
 ## 🚨 Error Handling
 
 The system includes comprehensive error handling for:
+
 - Invalid API keys
 - Network connectivity issues
 - Input validation errors
 - Cost limit exceeded scenarios
 - Model availability issues
 
-## 📊 Logging
+## 📊 Enhanced Logging
 
-Comprehensive logging is implemented for:
-- API requests and responses
-- Cost tracking
-- Error conditions
-- User interactions
-- System performance metrics
+Enhanced logging system with centralized management:
+
+- **Decorator-based logging**: Automatic function entry/exit tracking
+- **Performance metrics**: Execution time monitoring for all operations
+- **Cost tracking**: Real-time API usage and cost calculation
+- **Error handling**: Centralized error logging with context
+- **Operation stack**: Nested operation tracking for complex workflows
 
 ## 🔒 Security
 
@@ -139,6 +159,7 @@ Comprehensive logging is implemented for:
 ## 🧪 Testing
 
 To test the system:
+
 1. Ensure all dependencies are installed
 2. Verify your OpenAI API key is valid
 3. Start with simple questions to test functionality
@@ -147,6 +168,7 @@ To test the system:
 ## 🚀 Deployment
 
 The application can be deployed using:
+
 - **Local Development**: Direct Python execution
 - **Docker**: Containerized deployment (Dockerfile not included)
 - **Cloud Platforms**: Deploy to Heroku, AWS, or similar platforms
@@ -166,6 +188,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🆘 Support
 
 For issues and questions:
+
 1. Check the logs for error messages
 2. Verify your API key and configuration
 3. Ensure all dependencies are properly installed
