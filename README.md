@@ -1,4 +1,4 @@
-# AI Debate System
+# AI Debate System (improved)
 
 AI-powered debate system with multiple models, cost tracking, and web interface.
 
